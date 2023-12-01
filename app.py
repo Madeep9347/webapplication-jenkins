@@ -25,6 +25,8 @@ db_config = {
 def create_guestbook_table():
     conn = mysql.connector.connect(**db_config)
     cursor = conn.cursor()
+    cursor.execute("CREATE DATABASE IF NOT EXISTS madhu")
+    cursor.execute("USE madhu")
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS guestbook (
             id INT AUTO_INCREMENT PRIMARY KEY,
