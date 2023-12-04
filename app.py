@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Create a Secrets Manager client
 secrets_manager_client = boto3.client(service_name='secretsmanager', region_name='us-east-1')
 
-# Retrieve the secret values from AWS Secrets Manager
+# Retrieve the secret values from AWS Secrets Manager  
 secret_name = 'DBCredentials1'
 get_secret_value_response = secrets_manager_client.get_secret_value(SecretId=secret_name)
 secret_values = json.loads(get_secret_value_response['SecretString'])
