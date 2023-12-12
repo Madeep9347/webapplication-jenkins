@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__)
 
-# Create a Secrets Manager client
+#Create a Secrets Manager client
 secrets_manager_client = boto3.client(service_name='secretsmanager', region_name='us-east-1')
 
 # Retrieve the secret values from AWS Secrets Manager  
